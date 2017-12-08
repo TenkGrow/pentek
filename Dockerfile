@@ -1,7 +1,8 @@
 FROM Dockerfile/ubuntu
 
 RUN
-  add-apt-repository -y ppa:nginx/stable \
+  sudo apt-get install software-properties-common \
+  && add-apt-repository -y ppa:nginx/stable \
   && pt-get update \
   && pt-get install -y nginx \
   && rm -rf /var/lib/apt/lists/* \
